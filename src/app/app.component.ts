@@ -23,7 +23,7 @@ export class AppComponent {
     })
   }
   calc() {
-    let url = `http://localhost:37126/api/Calc/Calc?param1=${this.param1}&param2=${this.param2}&operatorName=${this.selectedValue}`;
+    let url = `http://localhost:37126/api/Calc/Calc?param1=${this.param1}&param2=${this.param2}&operatorName=${encodeURIComponent(this.selectedValue)}`;
     this.http.get(url).subscribe(data => {
       this.result = data;
     })
